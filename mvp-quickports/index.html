@@ -6,14 +6,152 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quickports</title>
+  <link rel="stylesheet" href="src/style.css">
 </head>
 
 <body>
+  <nav id="navbar">
+    <div class="container nav-content">
+      <span class="logo">Quickports</span>
+      <ul>
+        <li><a href="#como-funciona">Cómo Funciona</a></li>
+        <li><a href="#simulador">Cotizar Envío</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <div>
-    <h2>Hola</h2>
-    <p>Esto es un parrafo</p>
-  </div>
+  <header class="hero">
+    <div class="container">
+      <h1 class="titulo-principal">¡Exportar a EE. UU. NUNCA Fue Tan Fácil!</h1>
+      <h2 class="subtitulo">Quickports: Tu vía directa, simple y con tarifas fijas para enviar productos duraderos desde
+        [Tu País] hasta cualquier estado de EE. UU.</h2>
+      <a href="#simulador" class="btn btn-principal">🚀 Cotiza tu Primer Envío 'Todo Incluido' Ahora</a>
+    </div>
+  </header>
+
+  <section class="problema-solucion">
+    <div class="container">
+      <div class="column">
+        <h3>💔 El Problema que Enfrentas Hoy</h3>
+        <ul>
+          <li>**Costos Ocultos y Variables:** Sorpresas con cargos aduaneros o de combustible.</li>
+          <li>**Documentación Compleja:** Pierdes horas llenando formularios aduaneros.</li>
+          <li>**Tiempos Inciertos:** Tu paquete queda varado sin saber su ubicación.</li>
+        </ul>
+      </div>
+      <div class="column solucion">
+        <h3>✅ La Solución Quickports</h3>
+        <ul>
+          <li>**Tarifa Fija Garantizada:** Un solo precio que incluye todo. ¡Cero sorpresas!</li>
+          <li>**Documentación 100% Asistida:** Nos encargamos de todos los formularios por ti.</li>
+          <li>**Trazabilidad Rápida y Transparente:** Monitorea tu envío hasta la puerta de tu cliente.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="como-funciona">
+    <div class="container">
+      <h2>⚙️ El Proceso Quickports en 3 Clics</h2>
+      <div class="pasos-grid">
+        <div class="paso">
+          <h4>Paso 1: Cotiza y Reserva</h4>
+          <p>Utiliza nuestro simulador para obtener un precio final en segundos y agenda la recogida.</p>
+        </div>
+        <div class="paso">
+          <h4>Paso 2: Prepara tu Paquete</h4>
+          <p>Te indicamos qué datos necesitamos para generar la documentación de aduanas. ¡Olvídate del papeleo!</p>
+        </div>
+        <div class="paso">
+          <h4>Paso 3: Entrega Exitosa</h4>
+          <p>Recogemos tu producto, gestionamos la aduana y entregamos directamente a tu cliente en EE. UU. en X días.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="simulador" class="simulador">
+    <div class="container">
+      <h2>💰 Cotización Rápida y Transparente a EE. UU.</h2>
+      <form id="cotizador-form" action="#">
+        <label for="peso">Peso Aproximado del Paquete (kg):</label>
+        <input type="number" id="peso" name="peso" min="1" max="50" placeholder="Ej: 3" required>
+
+        <label for="producto">Tipo de Producto:</label>
+        <select id="producto" name="producto" required>
+          <option value="">-- Selecciona una opción --</option>
+          <option value="artesania">Artesanía</option>
+          <option value="textil">Textil</option>
+          <option value="alimentos">Café/Alimentos No Perecederos</option>
+          <option value="cosmeticos">Cosméticos Sólidos</option>
+        </select>
+
+        <button type="submit" class="btn btn-cotizar">Calcular Precio Todo Incluido</button>
+      </form>
+
+      <div id="resultado" class="resultado-cotizacion" style="display:none;">
+        <h3>Resultado del Cálculo:</h3>
+        <p>Tu Envío de <span id="peso-result"></span> kg a **Cualquier Estado de EE. UU.** por la Ruta Quickports tiene
+          un costo final de:</p>
+        <p class="precio-final">USD <span id="precio-result"></span></p>
+        <p class="incluye">*(Incluye flete, seguro, manejo de documentación y tarifas aduaneras básicas).*</p>
+
+        <a href="mailto:tucorreo@quickports.com?subject=Reserva de Exportación" class="btn btn-principal mt-20">✅
+          ¡Quiero Empezar a Exportar! (Contáctanos)</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contacto-final">
+    <div class="container">
+      <h2>¿Tienes Preguntas Específicas?</h2>
+      <p>Habla directamente con un experto en exportación de Quickports.</p>
+      <a href="mailto:tucorreo@quickports.com?subject=Consulta%20Exportacion%20Quickports" class="btn btn-principal">📧
+        Contáctanos Vía Email</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-content">
+
+      <div class="footer-col logo-col">
+        <span class="logo-footer">Quickports</span>
+        <p>Exportación Simple y Segura a EE. UU.</p>
+        <p>📧 Email: contacto@quickports.com</p>
+        <p>📞 Tel: +XX XXX XXX XXX</p>
+      </div>
+
+      <div class="footer-col social-col">
+        <h4>Síguenos y Pregúntanos</h4>
+        <div class="social-links">
+          <a href="#" target="_blank" class="social-icon">Facebook</a>
+          <a href="#" target="_blank" class="social-icon">Instagram</a>
+          <a href="#" target="_blank" class="social-icon">LinkedIn</a>
+        </div>
+        <a href="https://wa.me/XXXXXXXXXX?text=Hola%2C%20quisiera%20cotizar%20mi%20exportaci%C3%B3n%20a%20EE.UU."
+          target="_blank" class="btn btn-whatsapp mt-20">💬 Chatea con un Experto (WhatsApp)</a>
+      </div>
+
+      <div class="footer-col links-col">
+        <h4>Información Útil</h4>
+        <ul>
+          <li><a href="#como-funciona">Cómo Funciona</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Términos y Condiciones</a></li>
+          <li><a href="#">Preguntas Frecuentes (FAQ)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 Quickports. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 
 </html>
