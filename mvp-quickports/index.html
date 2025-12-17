@@ -7,151 +7,211 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quickports</title>
   <link rel="stylesheet" href="src/style.css">
+  <script src="src/main.js"></script>
 </head>
 
-<body>
-  <nav id="navbar">
-    <div class="container nav-content">
-      <span class="logo">Quickports</span>
-      <ul>
-        <li><a href="#como-funciona">Cómo Funciona</a></li>
-        <li><a href="#simulador">Cotizar Envío</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+<body class="font-sans text-gray-800 bg-gray-50">
+
+  <nav class="bg-white shadow-md py-4 sticky top-0 z-50">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <span class="text-2xl font-bold text-blue-600">Quickports</span>
+      <ul class="hidden md:flex space-x-8 font-medium">
+        <li><a href="#como-funciona" class="text-gray-600 hover:text-blue-600 transition">Cómo Funciona</a></li>
+        <li><a href="#simulador" class="text-gray-600 hover:text-blue-600 transition">Cotizar Envío</a></li>
+        <li><a href="#contacto" class="text-gray-600 hover:text-blue-600 transition">Contacto</a></li>
       </ul>
+      <a href="#simulador"
+        class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-700">Empezar</a>
     </div>
   </nav>
 
-  <header class="hero">
-    <div class="container">
-      <h1 class="titulo-principal">¡Exportar a EE. UU. NUNCA Fue Tan Fácil!</h1>
-      <h2 class="subtitulo">Quickports: Tu vía directa, simple y con tarifas fijas para enviar productos duraderos desde
-        [Tu País] hasta cualquier estado de EE. UU.</h2>
-      <a href="#simulador" class="btn btn-principal">🚀 Cotiza tu Primer Envío 'Todo Incluido' Ahora</a>
+  <header class="bg-white py-16 md:py-24 border-b border-gray-200">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+        ¡Exportar a EE. UU. <span class="text-blue-600">NUNCA</span> Fue Tan Fácil!
+      </h1>
+      <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+        Tu vía directa, simple y con tarifas fijas para enviar productos duraderos desde <span
+          class="font-bold text-gray-800">tu país</span> hasta cualquier estado de EE. UU.
+      </p>
+      <a href="#simulador"
+        class="inline-block bg-blue-600 text-white font-bold py-4 px-10 rounded-full shadow-xl hover:bg-blue-700 transition transform hover:scale-105">
+        🚀 Cotiza tu Primer Envío Ahora
+      </a>
     </div>
   </header>
 
-  <section class="problema-solucion">
-    <div class="container">
-      <div class="column">
-        <h3>💔 El Problema que Enfrentas Hoy</h3>
-        <ul>
-          <li>**Costos Ocultos y Variables:** Sorpresas con cargos aduaneros o de combustible.</li>
-          <li>**Documentación Compleja:** Pierdes horas llenando formularios aduaneros.</li>
-          <li>**Tiempos Inciertos:** Tu paquete queda varado sin saber su ubicación.</li>
+  <section class="py-16 container mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div class="bg-red-50 p-8 rounded-2xl border border-red-100">
+        <h3 class="text-2xl font-bold text-red-700 mb-6 flex items-center">
+          <span class="mr-2">💔</span> El Problema que Enfrentas
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-start text-red-800"><span class="font-bold mr-2 text-xl">×</span> Costos ocultos y
+            variables que arruinan tu margen.</li>
+          <li class="flex items-start text-red-800"><span class="font-bold mr-2 text-xl">×</span> Papeleo aduanero
+            imposible de entender.</li>
+          <li class="flex items-start text-red-800"><span class="font-bold mr-2 text-xl">×</span> Incertidumbre total
+            sobre cuándo llegará tu paquete.</li>
         </ul>
       </div>
-      <div class="column solucion">
-        <h3>✅ La Solución Quickports</h3>
-        <ul>
-          <li>**Tarifa Fija Garantizada:** Un solo precio que incluye todo. ¡Cero sorpresas!</li>
-          <li>**Documentación 100% Asistida:** Nos encargamos de todos los formularios por ti.</li>
-          <li>**Trazabilidad Rápida y Transparente:** Monitorea tu envío hasta la puerta de tu cliente.</li>
+      <div class="bg-green-50 p-8 rounded-2xl border border-green-100">
+        <h3 class="text-2xl font-bold text-green-700 mb-6 flex items-center">
+          <span class="mr-2">✅</span> La Solución Quickports
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-start text-green-800"><span class="font-bold mr-2 text-xl">✓</span> Tarifa Fija: Paga lo
+            que ves en el simulador.</li>
+          <li class="flex items-start text-green-800"><span class="font-bold mr-2 text-xl">✓</span> Gestión 100%
+            asistida: Nosotros hacemos el papeleo.</li>
+          <li class="flex items-start text-green-800"><span class="font-bold mr-2 text-xl">✓</span> Tracking Premium:
+            Monitoreo en tiempo real.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section id="como-funciona" class="como-funciona">
-    <div class="container">
-      <h2>⚙️ El Proceso Quickports en 3 Clics</h2>
-      <div class="pasos-grid">
-        <div class="paso">
-          <h4>Paso 1: Cotiza y Reserva</h4>
-          <p>Utiliza nuestro simulador para obtener un precio final en segundos y agenda la recogida.</p>
+  <section id="como-funciona" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-12 text-gray-900">⚙️ Tu exportación en 3 pasos</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="text-blue-600 text-3xl font-bold mb-4">1</div>
+          <h4 class="font-bold text-lg mb-2">Reserva</h4>
+          <p class="text-gray-600">Cotiza en segundos y solicita la recogida de tu producto.</p>
         </div>
-        <div class="paso">
-          <h4>Paso 2: Prepara tu Paquete</h4>
-          <p>Te indicamos qué datos necesitamos para generar la documentación de aduanas. ¡Olvídate del papeleo!</p>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="text-blue-600 text-3xl font-bold mb-4">2</div>
+          <h4 class="font-bold text-lg mb-2">Despacha</h4>
+          <p class="text-gray-600">Danos los datos básicos y nosotros generamos las guías de exportación.</p>
         </div>
-        <div class="paso">
-          <h4>Paso 3: Entrega Exitosa</h4>
-          <p>Recogemos tu producto, gestionamos la aduana y entregamos directamente a tu cliente en EE. UU. en X días.
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="text-blue-600 text-3xl font-bold mb-4">3</div>
+          <h4 class="font-bold text-lg mb-2">Entrega</h4>
+          <p class="text-gray-600">Tu cliente recibe el paquete en EE. UU. de forma segura y rápida.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="calculadora" class="py-12">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="bg-white p-8 rounded-2xl shadow-lg border">
+        <h2 class="text-2xl font-bold mb-8 text-gray-800">Calculadora de precio por envío</h2>
+
+        <form id="calc-form" class="grid md:grid-cols-2 gap-6 mb-10 p-6 bg-blue-50 rounded-xl">
+          <div>
+            <label class="block text-sm font-bold text-gray-700 mb-2">Seleccione Destino</label>
+            <select id="destino" class="w-full p-3 border rounded-lg outline-none focus:ring-2 focus:ring-blue-500">
+              <option value="EEUU">EEUU (Estados Unidos)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-gray-700 mb-2">Ingrese el Peso (Gramos)</label>
+            <input type="number" id="peso" placeholder="Ej: 1500" required
+              class="w-full p-3 border rounded-lg outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+          <div class="md:col-span-2">
+            <button type="submit"
+              class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">
+              Calcular Tarifas
+            </button>
+          </div>
+        </form>
+
+        <div id="resultados-area" class="hidden">
+          <h3 class="text-blue-600 font-bold text-lg mb-6">Seleccione su filtro</h3>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div>
+              <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Tipo de servicio</label>
+              <select id="filtro-servicio" class="w-full p-3 border rounded-lg bg-gray-50">
+                <option value="SERVICIO ECONOMICO INT.">Servicio económico internacional</option>
+                <option value="SERVICIO EXPRESO INT.">Servicio expreso internacional</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Producto</label>
+              <select id="filtro-producto" class="w-full p-3 border rounded-lg bg-gray-50">
+                <option value="Artesanía">Artesanía</option>
+                <option value="Textil">Textil</option>
+                <option value="Alimentos">Alimentos</option>
+                <option value="Café">Café</option>
+                <option value="Otros productos">Otros productos</option>
+              </select>
+            </div>
+          </div>
+
+          <h4 class="font-bold text-gray-800 mb-4">Resultado del Cálculo para una Entrega</h4>
+
+          <div class="overflow-x-auto rounded-xl border">
+            <table class="w-full text-left">
+              <thead class="bg-gray-50 text-xs font-bold text-gray-500 uppercase">
+                <tr>
+                  <th class="p-4 border-b">Tipo de servicio</th>
+                  <th class="p-4 border-b">Producto</th>
+                  <th class="p-4 border-b">Tipo de certificado</th>
+                  <th class="p-4 border-b">Clase</th>
+                  <th class="p-4 border-b">Destino</th>
+                  <th class="p-4 border-b text-blue-600">Importe (S/)</th>
+                  <th class="p-4 border-b">Rango de Peso</th>
+                </tr>
+              </thead>
+              <tbody id="tabla-body" class="text-sm divide-y">
+              </tbody>
+            </table>
+          </div>
+
+          <p class="mt-4 text-xs text-gray-500 italic">
+            La certificación para envíos con destino internacional tendrá una tarifa de 13.60 soles.
           </p>
+
+          <a id="wa-link" href="#" target="_blank"
+            class="mt-8 block w-full bg-green-500 text-white text-center font-bold py-4 rounded-xl hover:bg-green-600 transition shadow-lg">
+            Solicitar este envío por WhatsApp
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="simulador" class="simulador">
-    <div class="container">
-      <h2>💰 Cotización Rápida y Transparente a EE. UU.</h2>
-      <form id="cotizador-form" action="#">
-        <label for="peso">Peso Aproximado del Paquete (kg):</label>
-        <input type="number" id="peso" name="peso" min="1" max="50" placeholder="Ej: 3" required>
-
-        <label for="producto">Tipo de Producto:</label>
-        <select id="producto" name="producto" required>
-          <option value="">-- Selecciona una opción --</option>
-          <option value="artesania">Artesanía</option>
-          <option value="textil">Textil</option>
-          <option value="alimentos">Café/Alimentos No Perecederos</option>
-          <option value="cosmeticos">Cosméticos Sólidos</option>
-        </select>
-
-        <button type="submit" class="btn btn-cotizar">Calcular Precio Todo Incluido</button>
-      </form>
-
-      <div id="resultado" class="resultado-cotizacion" style="display:none;">
-        <h3>Resultado del Cálculo:</h3>
-        <p>Tu Envío de <span id="peso-result"></span> kg a **Cualquier Estado de EE. UU.** por la Ruta Quickports tiene
-          un costo final de:</p>
-        <p class="precio-final">USD <span id="precio-result"></span></p>
-        <p class="incluye">*(Incluye flete, seguro, manejo de documentación y tarifas aduaneras básicas).*</p>
-
-        <a href="mailto:tucorreo@quickports.com?subject=Reserva de Exportación" class="btn btn-principal mt-20">✅
-          ¡Quiero Empezar a Exportar! (Contáctanos)</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="contacto" class="contacto-final">
-    <div class="container">
-      <h2>¿Tienes Preguntas Específicas?</h2>
-      <p>Habla directamente con un experto en exportación de Quickports.</p>
-      <a href="mailto:tucorreo@quickports.com?subject=Consulta%20Exportacion%20Quickports" class="btn btn-principal">📧
-        Contáctanos Vía Email</a>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-content">
-
-      <div class="footer-col logo-col">
-        <span class="logo-footer">Quickports</span>
-        <p>Exportación Simple y Segura a EE. UU.</p>
-        <p>📧 Email: contacto@quickports.com</p>
-        <p>📞 Tel: +XX XXX XXX XXX</p>
-      </div>
-
-      <div class="footer-col social-col">
-        <h4>Síguenos y Pregúntanos</h4>
-        <div class="social-links">
-          <a href="#" target="_blank" class="social-icon">Facebook</a>
-          <a href="#" target="_blank" class="social-icon">Instagram</a>
-          <a href="#" target="_blank" class="social-icon">LinkedIn</a>
+  <footer id="contacto" class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-12 mb-12">
+        <div>
+          <span class="text-2xl font-bold text-blue-500 block mb-4">Quickports</span>
+          <p class="text-gray-400">Simplificando el camino para los pequeños exportadores hacia el mercado más grande
+            del mundo.</p>
         </div>
-        <a href="https://wa.me/XXXXXXXXXX?text=Hola%2C%20quisiera%20cotizar%20mi%20exportaci%C3%B3n%20a%20EE.UU."
-          target="_blank" class="btn btn-whatsapp mt-20">💬 Chatea con un Experto (WhatsApp)</a>
+        <div>
+          <h4 class="font-bold mb-4">Contacto</h4>
+          <ul class="text-gray-400 space-y-2">
+            <li>📍 Oficina Central: [Tu Ciudad]</li>
+            <li>📧 contacto@quickports.com</li>
+            <li>📞 +51 900 000 000</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Síguenos</h4>
+          <div class="flex space-x-4 mb-6">
+            <a href="#" class="bg-gray-800 p-2 rounded hover:text-blue-500 transition">IG</a>
+            <a href="#" class="bg-gray-800 p-2 rounded hover:text-blue-500 transition">FB</a>
+            <a href="#" class="bg-gray-800 p-2 rounded hover:text-blue-500 transition">LI</a>
+          </div>
+          <a href="https://wa.me/TU_NUMERO"
+            class="bg-green-600 text-white px-6 py-3 rounded-lg font-bold block text-center hover:bg-green-700 transition">
+            Escríbenos por WhatsApp
+          </a>
+        </div>
       </div>
-
-      <div class="footer-col links-col">
-        <h4>Información Útil</h4>
-        <ul>
-          <li><a href="#como-funciona">Cómo Funciona</a></li>
-          <li><a href="#">Política de Privacidad</a></li>
-          <li><a href="#">Términos y Condiciones</a></li>
-          <li><a href="#">Preguntas Frecuentes (FAQ)</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2025 Quickports. Todos los derechos reservados.</p>
+      <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 Quickports. Exportación segura para productos duraderos.</p>
       </div>
     </div>
   </footer>
-
 </body>
+
+<script type="module" src="/src/main.js"></script>
 
 </html>
