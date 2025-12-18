@@ -23,6 +23,27 @@ async function actualizarTabla() {
 
     if (!peso) return; // Evita errores si el campo está vacío
 
+    // --- NUEVO: GUARDAR EN HISTORIAL ---
+    console.log("💾 Guardando consulta en historial...");
+    const { error: historyError } = await supabase
+        .from('historial_consultas')
+        .insert([
+            {
+                created_at: new Date().toISOString(),
+                servicio: servicioSelected,
+                producto: productoSelected,
+                destino: destinoSelected,
+                peso: peso
+            }
+        ]);
+
+    if (historyError) {
+        console.error("❌ Error guardando historial:", historyError);
+    } else {
+        console.log("✅ Historial guardado correctamente");
+    }
+    // -----------------------------------
+
     // 0. DEBUG: Ver qué estamos enviando
     console.log("--- Consultando Supabase ---");
     console.log("Servicio:", servicioSelected);
@@ -60,7 +81,7 @@ async function actualizarTabla() {
                 <tr class="hover:bg-gray-50 border-b">
                     <td class="p-4 font-medium">${item.tipo_servicio}</td>
                     <td class="p-4">${item.producto}</td>
-                    <td class="p-4">${item.tipo_certifica}</td>
+                    <td class="p-4">${item.tipo_certificado}</td>
                     <td class="p-4">${item.clase || '-'}</td>
                     <td class="p-4">${item.destino}</td>
                     <td class="p-4 font-bold text-blue-600">S/ ${parseFloat(item.importe).toFixed(2)}</td>
@@ -93,60 +114,18 @@ filtroProducto.addEventListener('change', actualizarTabla);
 
 
 
-// const calcForm = document.getElementById('calc-form');
-// const resultadosArea = document.getElementById('resultados-area');
-// const filtroServicio = document.getElementById('filtro-servicio');
-// const filtroProducto = document.getElementById('filtro-producto');
-// const tablaBody = document.getElementById('tabla-body');
+// DEBUG: Ejecutar al inicio para ver qué columnas y datos tiene realmente la tabla
+async function debugTipos() {
+    console.log("🔍 DEBUG: Trayendo 1 fila de ejemplo de TABLA_TARIFAS...");
+    const { data, error } = await supabase
+        .from('TABLA_TARIFAS')
+        .select('*')
+        .limit(1);
 
-// function calcularRango(gramos) {
-//     const inferior = Math.floor((gramos - 1) / 500) * 500 + 1;
-//     const superior = Math.ceil(gramos / 500) * 500;
-//     return `De ${inferior} a ${superior} Grs.`;
-// }
-
-// function actualizarTabla() {
-//     const peso = parseInt(document.getElementById('peso').value);
-//     const servicioSelected = filtroServicio.value;
-//     const productoSelected = filtroProducto.value;
-//     const rango = calcularRango(peso);
-
-//     // Lógica de precios simulada basada en imágenes
-//     const basePrice = (Math.ceil(peso / 500) * 22);
-
-//     // Datos base para filtrar
-//     const todasLasOpciones = [
-//         { servicio: 'SERVICIO ECONOMICO INT.', producto: productoSelected, certificado: 'CERTIFICADO', clase: 'ECONOMICO', destino: 'EEUU', importe: basePrice.toFixed(2) },
-//         { servicio: 'SERVICIO ECONOMICO INT.', producto: productoSelected, certificado: 'NO CERTIFICADO', clase: 'PRIORITARIO', destino: 'EEUU', importe: (basePrice + 10).toFixed(2) },
-//         { servicio: 'SERVICIO EXPRESO INT.', producto: productoSelected, certificado: 'CERTIFICADO', clase: 'EMS', destino: 'EEUU', importe: (basePrice + 30).toFixed(2) }
-//     ];
-
-//     // Filtrar solo por el servicio seleccionado
-//     const filtrados = todasLasOpciones.filter(item => item.servicio === servicioSelected);
-
-//     tablaBody.innerHTML = '';
-//     filtrados.forEach(item => {
-//         tablaBody.innerHTML += `
-//                     <tr class="hover:bg-gray-50">
-//                         <td class="p-4 font-medium">${item.servicio}</td>
-//                         <td class="p-4">${item.producto}</td>
-//                         <td class="p-4">${item.certificado}</td>
-//                         <td class="p-4">${item.clase}</td>
-//                         <td class="p-4">${item.destino}</td>
-//                         <td class="p-4 font-bold text-blue-600">${item.importe}</td>
-//                         <td class="p-4 text-gray-500">${rango}</td>
-//                     </tr>
-//                 `;
-//     });
-
-//     document.getElementById('wa-link').href = `https://wa.me/TUNUMERO?text=Hola! Quiero enviar un producto de tipo ${productoSelected} (${peso}g) vía ${servicioSelected}.`;
-// }
-
-// calcForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     resultadosArea.classList.remove('hidden');
-//     actualizarTabla();
-// });
-
-// filtroServicio.addEventListener('change', actualizarTabla);
-// filtroProducto.addEventListener('change', actualizarTabla);
+    if (error) {
+        console.error("❌ DEBUG Error:", error);
+    } else {
+        console.log("✅ DEBUG: Fila de ejemplo (Revisa las COLUMNAS y DATOS):", data);
+    }
+}
+debugTipos();
